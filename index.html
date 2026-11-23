@@ -125,7 +125,7 @@ section { padding-block: clamp(3rem, 7vw, 5rem); }
 /* about */
 .about { background: var(--surface); border-block: 1px solid var(--line); }
 .about .wrap { display: grid; grid-template-columns: 280px 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
-.portrait { aspect-ratio: 4 / 5; max-width: 100%; border-radius: var(--radius); background: var(--primary-soft); display: grid; place-items: center; text-align: center; color: var(--primary); font-weight: 600; padding: 1rem; border: 2px dashed color-mix(in srgb, var(--primary) 40%, transparent); }
+.portrait { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; max-width: 100%; object-fit: cover; border-radius: var(--radius); background: var(--primary-soft); box-shadow: 0 18px 40px -24px rgba(20, 50, 35, .45); }
 .creds { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.6rem; }
 .cred { border-top: 2px solid var(--primary); padding-top: .7rem; min-width: 0; }
 .cred b { display: block; font-family: var(--font-display); font-size: 1.05rem; }
@@ -276,7 +276,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
   <section class="about" id="ve-toi">
     <div class="wrap">
-      <div class="portrait">[Ảnh chân dung của bạn]</div>
+      <img class="portrait" src="portrait.jpg" width="800" height="1000" alt="Chân dung Nguyễn Diệu Linh, Cử nhân Dinh dưỡng, mặc áo blouse trắng">
       <div>
         <p class="eyebrow">Về tôi</p>
         <h2>Xin chào, tôi là Nguyễn Diệu Linh</h2>
