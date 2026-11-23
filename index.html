@@ -247,6 +247,12 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
 
+/* sign-up form CTA on the green contact band */
+.contact-cta { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem 1rem; margin-top: 1.4rem; }
+.btn-light { background: var(--primary-ink); color: var(--primary); font-size: 1.02rem; padding: .85rem 1.4rem; }
+.btn-light:hover { filter: brightness(.97); }
+.contact-cta-note { font-size: .88rem; color: color-mix(in srgb, var(--primary-ink) 80%, transparent); }
+
 /* Zalo */
 .btn-zalo { background: var(--zalo); color: var(--zalo-ink); justify-self: start; }
 .btn-zalo:hover { filter: brightness(1.08); }
@@ -403,7 +409,7 @@ footer { padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
       <a href="#goi" data-tab-link="goi">Gói tư vấn</a>
       <a href="#hoi-dap" data-tab-link="hoi-dap">Hỏi đáp</a>
     </nav>
-    <a class="btn btn-primary nav-cta" href="https://zalo.me/0359600743" target="_blank" rel="noopener">Nhắn Zalo</a>
+    <a class="btn btn-primary nav-cta" href="https://forms.gle/5B94N66QF3utjfyo9" target="_blank" rel="noopener">Đăng ký tư vấn</a>
   </div>
 </header>
 
@@ -420,7 +426,7 @@ footer { padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
           <li>Theo dõi cân nặng hằng tuần và điều chỉnh khi bị chững cân</li>
         </ul>
         <div class="hero-cta">
-          <a class="btn btn-primary" href="#lien-he">Đặt lịch tư vấn</a>
+          <a class="btn btn-primary" href="https://forms.gle/5B94N66QF3utjfyo9" target="_blank" rel="noopener">Đăng ký tư vấn</a>
           <a class="btn btn-ghost" href="#tinh-calo">Tự tính calo của bạn</a>
         </div>
       </div>
@@ -496,7 +502,7 @@ footer { padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
       <p class="eyebrow">Phương pháp</p>
       <h2>Bốn bước từ lúc nhắn tin đến khi đạt cân nặng mục tiêu</h2>
       <ol class="steps">
-        <li><h3>Trò chuyện ban đầu</h3><p>Bạn cho tôi biết chiều cao, cân nặng, bệnh nền, lịch làm việc, món thích và món không ăn được.</p></li>
+        <li><h3>Điền phiếu thông tin</h3><p>Bạn điền <a href="https://forms.gle/5B94N66QF3utjfyo9" target="_blank" rel="noopener">phiếu đăng ký tư vấn</a> trong khoảng 5 phút: mục tiêu, lịch sinh hoạt, thói quen ăn, vận động và sức khỏe. Sau đó tôi nhắn Zalo để trao đổi thêm.</p></li>
         <li><h3>Tính calo, lên thực đơn</h3><p>Tôi tính lượng calo và tỷ lệ đạm, tinh bột, chất béo cho riêng bạn, rồi gửi thực đơn bằng các món dễ nấu, dễ mua.</p></li>
         <li><h3>Theo dõi hằng ngày</h3><p>Bạn chụp bữa ăn gửi qua Zalo. Tôi nhận xét, gợi ý món thay thế khi phải ăn ngoài hoặc đi tiệc.</p></li>
         <li><h3>Check-in mỗi tuần</h3><p>Mỗi tuần bạn báo cân nặng và vòng eo. Khi cân đứng yên, tôi điều chỉnh thực đơn để bạn tiếp tục giảm.</p></li>
@@ -559,7 +565,7 @@ footer { padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
             <span class="v" style="color: var(--primary)"><span id="out-goal">–</span> <small>kcal/ngày</small></span>
           </div>
           <p class="calc-note">Ước tính theo công thức Mifflin-St Jeor, trừ khoảng 500 kcal mỗi ngày và không thấp hơn 1.200 kcal (nữ) hoặc 1.500 kcal (nam). Không thay thế tư vấn trực tiếp, nhất là khi bạn đang mang thai, cho con bú hoặc có bệnh nền.</p>
-          <a class="btn btn-primary" href="https://zalo.me/0359600743" target="_blank" rel="noopener" style="justify-self:start">Nhận thực đơn theo con số này</a>
+          <a class="btn btn-primary" href="https://forms.gle/5B94N66QF3utjfyo9" target="_blank" rel="noopener" style="justify-self:start">Đăng ký để nhận thực đơn riêng</a>
         </div>
       </div>
       
@@ -688,7 +694,7 @@ footer { padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
             <li>Nhắn tin hỏi đáp qua Zalo mỗi ngày</li>
             <li>4 lần check-in cân nặng</li>
           </ul>
-          <a class="btn btn-ghost" href="https://zalo.me/0359600743" target="_blank" rel="noopener">Đăng ký qua Zalo</a>
+          <a class="btn btn-ghost" href="https://forms.gle/5B94N66QF3utjfyo9" target="_blank" rel="noopener">Đăng ký tư vấn</a>
         </article>
         <article class="plan featured">
           <span class="tag">Phổ biến</span>
@@ -699,7 +705,7 @@ footer { padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
             <li>Điều chỉnh thực đơn khi chững cân</li>
             <li>Biểu đồ tiến độ gửi mỗi tháng</li>
           </ul>
-          <a class="btn btn-primary" href="https://zalo.me/0359600743" target="_blank" rel="noopener">Đăng ký qua Zalo</a>
+          <a class="btn btn-primary" href="https://forms.gle/5B94N66QF3utjfyo9" target="_blank" rel="noopener">Đăng ký tư vấn</a>
         </article>
         <article class="plan">
           <h3>Gói 6 tháng</h3>
@@ -708,7 +714,7 @@ footer { padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
             <li>Mọi quyền lợi của gói 3 tháng</li>
             <li>Giai đoạn duy trì để không tăng cân lại</li>
           </ul>
-          <a class="btn btn-ghost" href="https://zalo.me/0359600743" target="_blank" rel="noopener">Đăng ký qua Zalo</a>
+          <a class="btn btn-ghost" href="https://forms.gle/5B94N66QF3utjfyo9" target="_blank" rel="noopener">Đăng ký tư vấn</a>
         </article>
       </div>
     </div>
@@ -742,8 +748,12 @@ footer { padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
   <section class="contact" id="lien-he">
     <div class="wrap">
       <div>
-        <h2>Bắt đầu bằng một tin nhắn Zalo</h2>
-        <p class="lead">Nhắn cho tôi chiều cao, cân nặng và mục tiêu của bạn. Tôi trả lời tin nhắn 24/24 và sẽ hẹn lịch tư vấn đầu tiên với bạn.</p>
+        <h2>Đăng ký tư vấn</h2>
+        <p class="lead">Điền phiếu thông tin ban đầu trong khoảng 5 phút, tôi sẽ nhắn Zalo cho bạn để hẹn buổi tư vấn đầu tiên. Thông tin được giữ bảo mật và chỉ dùng cho việc tư vấn. Nếu muốn hỏi trước, bạn cứ nhắn Zalo, tôi trả lời 24/24.</p>
+        <div class="contact-cta">
+          <a class="btn btn-light" href="https://forms.gle/5B94N66QF3utjfyo9" target="_blank" rel="noopener">Điền phiếu đăng ký tư vấn</a>
+          <span class="contact-cta-note">Khoảng 5 phút · 6 phần ngắn</span>
+        </div>
       </div>
       <div class="contact-card">
         <div class="contact-row">
