@@ -398,6 +398,8 @@ footer { padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
       <a href="#trang-chu" data-tab-link="trang-chu">Trang chủ</a>
       <a href="#phuong-phap" data-tab-link="phuong-phap">Phương pháp</a>
       <a href="#tinh-calo" data-tab-link="tinh-calo">Tính calo</a>
+      <a href="#tra-calo" data-tab-link="tra-calo">Tra calo</a>
+      <a href="#kien-thuc" data-tab-link="kien-thuc">Kiến thức</a>
       <a href="#goi" data-tab-link="goi">Gói tư vấn</a>
       <a href="#hoi-dap" data-tab-link="hoi-dap">Hỏi đáp</a>
     </nav>
@@ -429,10 +431,10 @@ footer { padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
           <span>Nữ, 158 cm, 65 kg</span>
         </div>
         <div class="meal"><span class="when">Sáng</span><span class="what">Bánh mì ốp la 1 trứng, dưa leo, cà chua</span><span class="kcal">350</span></div>
-        <div class="meal"><span class="when">Trưa</span><span class="what">1 chén cơm gạo lứt, cá kho tộ, canh rau ngót</span><span class="kcal">450</span></div>
-        <div class="meal"><span class="when">Xế</span><span class="what">Sữa chua không đường, nửa trái ổi</span><span class="kcal">150</span></div>
-        <div class="meal"><span class="when">Tối</span><span class="what">Ức gà áp chảo, rau luộc, nửa chén cơm</span><span class="kcal">400</span></div>
-        <div class="ticket-total"><span>Tổng cả ngày</span><b>≈ <span id="kcal-total">1.350</span> kcal</b></div>
+        <div class="meal"><span class="when">Trưa</span><span class="what">1 chén cơm, 1 lát cá hú kho, canh rau ngót</span><span class="kcal">415</span></div>
+        <div class="meal"><span class="when">Xế</span><span class="what">Sữa chua không đường, 1 trái chuối già</span><span class="kcal">140</span></div>
+        <div class="meal"><span class="when">Tối</span><span class="what">1 chén cơm, ức gà áp chảo, rau luộc</span><span class="kcal">425</span></div>
+        <div class="ticket-total"><span>Tổng cả ngày</span><b>≈ <span id="kcal-total">1.330</span> kcal</b></div>
         <div class="macro-bar" aria-hidden="true">
           <i style="width:30%; background: var(--primary)"></i>
           <i style="width:45%; background: var(--accent)"></i>
@@ -560,9 +562,118 @@ footer { padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
           <a class="btn btn-primary" href="https://zalo.me/0359600743" target="_blank" rel="noopener" style="justify-self:start">Nhận thực đơn theo con số này</a>
         </div>
       </div>
+      
+      <div class="menus">
+        <h3>Thực đơn mẫu theo mức calo</h3>
+        <p class="lead">Ba ngày ăn mẫu bằng món Việt dễ mua, dễ nấu. Thực đơn có viền xanh là mức gần nhất với con số bạn vừa tính.</p>
+        <p class="menu-note" id="menu-note" hidden></p>
+        <div class="menu-grid">
+          <article class="menu-card" data-kcal="1200">
+            <header><b>1.200 kcal</b><span class="menu-badge">Gần với mục tiêu của bạn</span></header>
+            <ul>
+              <li><span class="when">Sáng</span><span>1 bánh bao nhân thịt</span><span class="k">330</span></li>
+              <li><span class="when">Trưa</span><span>1 chén cơm, 1 lát cá lóc kho, 1 chén canh rau ngót, rau luộc</span><span class="k">390</span></li>
+              <li><span class="when">Xế</span><span>1 hũ sữa chua không đường, nửa trái ổi</span><span class="k">90</span></li>
+              <li><span class="when">Tối</span><span>Nửa chén cơm, 1 đĩa đậu hũ sốt cà, canh bí đao, rau luộc</span><span class="k">400</span></li>
+            </ul>
+          </article>
+          <article class="menu-card" data-kcal="1400">
+            <header><b>1.400 kcal</b><span class="menu-badge">Gần với mục tiêu của bạn</span></header>
+            <ul>
+              <li><span class="when">Sáng</span><span>1 tô phở bò tái</span><span class="k">415</span></li>
+              <li><span class="when">Trưa</span><span>1 chén cơm, 100 g ức gà luộc bỏ da, canh cải ngọt, 1 đĩa bông cải xào</span><span class="k">535</span></li>
+              <li><span class="when">Xế</span><span>1 trái chuối già</span><span class="k">75</span></li>
+              <li><span class="when">Tối</span><span>1 chén cơm, 1 lát cá ngừ kho, canh bí đao, rau luộc</span><span class="k">380</span></li>
+            </ul>
+          </article>
+          <article class="menu-card" data-kcal="1600">
+            <header><b>1.600 kcal</b><span class="menu-badge">Gần với mục tiêu của bạn</span></header>
+            <ul>
+              <li><span class="when">Sáng</span><span>1 ổ bánh mì thịt</span><span class="k">460</span></li>
+              <li><span class="when">Trưa</span><span>1 phần cơm tấm sườn, thêm dưa leo, cà chua</span><span class="k">530</span></li>
+              <li><span class="when">Xế</span><span>1 hũ sữa chua không đường, 1 trái chuối già</span><span class="k">140</span></li>
+              <li><span class="when">Tối</span><span>1 chén cơm, nửa phần thịt kho trứng, canh chua, rau luộc, 1 trái cam</span><span class="k">490</span></li>
+            </ul>
+          </article>
+        </div>
+        <p class="calc-note">Số calo lấy theo bảng ở tab Tra calo; rau luộc tính khoảng 30 kcal một đĩa. Thực đơn mẫu chưa tính đến bệnh nền, dị ứng hay khẩu vị riêng của bạn.</p>
+      </div>
+      
     </div>
   </section>
 
+  <section id="tra-calo" data-tab="tra-calo">
+    <div class="wrap">
+      <p class="eyebrow">Tra calo món Việt</p>
+      <h2>Món bạn sắp ăn có bao nhiêu calo?</h2>
+      <p class="lead">Gõ tên món hoặc chọn nhóm món. Thanh màu cho biết món đó chiếm bao nhiêu phần trong mức calo mỗi ngày của bạn.</p>
+      <div class="lookup">
+        <div class="lookup-controls">
+          <label for="food-q" class="sr-only">Tìm món</label>
+          <input id="food-q" type="search" placeholder="Ví dụ: phở, cơm tấm, trà sữa" autocomplete="off">
+          <div class="chips" id="food-chips" role="group" aria-label="Nhóm món"></div>
+        </div>
+        <p class="lookup-ref" id="food-ref"></p>
+        <ul class="food-list" id="food-list"></ul>
+        <p class="calc-note">Nguồn số liệu: <a href="https://nutrihome.vn/wp-content/uploads/2023/04/bang-luong-calo-trong-thuc-pham.pdf" target="_blank" rel="noopener">Bảng lượng calo trong thực phẩm, thức ăn Việt Nam</a> (Nutrihome, tổng hợp); ức gà và sữa chua không đường theo <a href="https://fdc.nal.usda.gov/" target="_blank" rel="noopener">USDA FoodData Central</a>. Cơm gà xối mỡ và cà phê sữa đá là ước tính. Thực tế thay đổi theo quán, khẩu phần và lượng dầu mỡ.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="kien-thuc" data-tab="kien-thuc">
+    <div class="wrap">
+      <p class="eyebrow">Kiến thức</p>
+      <h2>Ăn món Việt thông minh khi giảm cân</h2>
+      <p class="lead">Những câu hỏi khách hàng hỏi tôi nhiều nhất, trả lời ngắn gọn và dựa trên bằng chứng.</p>
+      <div class="articles">
+        <details class="article">
+          <summary><span class="a-tag">Món ăn</span><b>Một tô phở bao nhiêu calo?</b><span class="a-ex">Khoảng 415 đến 485 kcal một tô tùy loại. Vẫn ăn được khi giảm cân nếu biết chọn.</span></summary>
+          <div class="a-body">
+            <p>Theo bảng tổng hợp calo món ăn Việt Nam, một tô phở bò tái có khoảng 415 kcal, phở bò chín khoảng 430 kcal và phở gà khoảng 485 kcal. Phở gà thường nhiều calo hơn vì da gà và nước dùng béo. Phần lớn năng lượng đến từ bánh phở (khoảng 59 g tinh bột mỗi tô) và chất béo trong nước dùng.</p>
+            <h4>Ăn phở khi đang giảm cân</h4>
+            <ul>
+              <li>Xin ít bánh phở, thêm giá và rau thơm để vẫn no.</li>
+              <li>Chọn phở bò tái hoặc thịt gà phần ức bỏ da; hạn chế gầu và nước béo.</li>
+              <li>Hớt bỏ váng mỡ trên mặt tô, không cần uống hết nước.</li>
+              <li>Bỏ quẩy: mỗi cái quẩy đôi thêm khoảng 115 kcal.</li>
+              <li>Một tô phở là đủ cho bữa sáng hoặc bữa trưa; các bữa còn lại trong ngày nên nhẹ hơn.</li>
+            </ul>
+            <p class="a-by">Nguyễn Diệu Linh · Cử nhân Dinh dưỡng</p>
+          </div>
+        </details>
+        <details class="article">
+          <summary><span class="a-tag">Đồ uống</span><b>Trà sữa: uống sao cho không tăng cân?</b><span class="a-ex">Một ly trà sữa trân châu size M khoảng 500 kcal, ngang một bữa ăn. Vài điều chỉnh nhỏ giúp bớt đi khá nhiều calo.</span></summary>
+          <div class="a-body">
+            <p>Bảng tổng hợp calo món ăn Việt Nam ghi một ly trà sữa trân châu size M khoảng 500 kcal, nhiều hơn một tô phở bò tái. Riêng trân châu đã khoảng 350 kcal cho 100 g, tức khoảng 140 kcal cho phần trân châu trong một ly. Phần lớn năng lượng đến từ đường và trân châu, trong khi ly trà sữa lại không giúp no lâu như một bữa ăn.</p>
+            <h4>Khi thèm trà sữa</h4>
+            <ul>
+              <li>Gọi 30% đường hoặc không đường.</li>
+              <li>Bỏ trân châu, hoặc thay bằng thạch ít đường.</li>
+              <li>Chọn ly size nhỏ.</li>
+              <li>Những ngày thèm ngọt, thử trà trái cây ít đường trước; một ly trà đào 240 ml khoảng 120 kcal.</li>
+              <li>Coi ly trà sữa là món ăn vặt của ngày hôm đó và bớt các món ngọt khác.</li>
+            </ul>
+            <p class="a-by">Nguyễn Diệu Linh · Cử nhân Dinh dưỡng</p>
+          </div>
+        </details>
+        <details class="article">
+          <summary><span class="a-tag">Thói quen</span><b>Ăn tối muộn có làm tăng cân không?</b><span class="a-ex">Tổng lượng ăn cả ngày vẫn quan trọng nhất, nhưng thói quen ăn khuya thường kéo theo ăn nhiều hơn.</span></summary>
+          <div class="a-body">
+            <p>Cân nặng thay đổi chủ yếu theo tổng năng lượng ăn vào so với năng lượng tiêu hao trong cả ngày. Tuy vậy, ăn khuya hay đi kèm ăn vặt, chọn món nhiều dầu mỡ, nhiều đường và ngủ kém, nên tổng lượng ăn dễ vượt mức.</p>
+            <h4>Gợi ý cho bữa tối</h4>
+            <ul>
+              <li>Ăn tối xong trước giờ ngủ khoảng 2 đến 3 tiếng.</li>
+              <li>Bữa tối nhiều rau và đạm nạc, ít tinh bột hơn bữa trưa.</li>
+              <li>Nếu đói trước khi ngủ, chọn món nhẹ như một hộp sữa chua không đường hoặc vài lát trái cây ít ngọt.</li>
+              <li>Tránh mì gói, đồ chiên và trà sữa vào buổi tối.</li>
+            </ul>
+            <p>Đây cũng là chủ đề tôi đang cộng tác nghiên cứu: định nghĩa hành vi ăn trước khi ngủ theo giờ đồng hồ hay theo thời điểm đi ngủ của từng người.</p>
+            <p class="a-by">Nguyễn Diệu Linh · Cử nhân Dinh dưỡng</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
 
   <section id="goi" data-tab="goi">
     <div class="wrap">
@@ -697,43 +808,56 @@ footer { padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
 
   // ---- calorie lookup (Vietnamese dishes, typical portions) ----
   var FOODS = [
-    ["Phở bò tái", "1 tô vừa", 430, "Món nước", "Xin ít bánh phở, thêm giá và rau; hớt bỏ váng mỡ."],
-    ["Phở gà", "1 tô vừa", 400, "Món nước", ""],
-    ["Bún bò Huế", "1 tô vừa", 480, "Món nước", "Nước dùng nhiều mỡ, nên ăn ít nước và bớt chả."],
-    ["Bún riêu cua", "1 tô vừa", 410, "Món nước", ""],
-    ["Hủ tiếu Nam Vang", "1 tô vừa", 400, "Món nước", ""],
-    ["Mì Quảng", "1 tô vừa", 500, "Món nước", ""],
-    ["Cơm tấm sườn", "1 dĩa", 530, "Cơm", "Bỏ mỡ hành, xin thêm dưa leo, cà chua."],
-    ["Cơm tấm sườn bì chả", "1 dĩa", 650, "Cơm", "Phần bì và chả thêm khoảng 120 kcal."],
-    ["Cơm gà xối mỡ", "1 dĩa", 700, "Cơm", "Gà chiên ngập dầu; chọn cơm gà luộc sẽ nhẹ hơn nhiều."],
-    ["Cơm chiên dương châu", "1 dĩa", 620, "Cơm", ""],
-    ["Cơm trắng", "1 chén (150 g)", 200, "Cơm", ""],
-    ["Bánh mì thịt", "1 ổ", 430, "Bánh & xôi", "Xin ít pate và bơ, thêm dưa leo."],
-    ["Bánh mì ốp la", "1 ổ, 1 trứng", 350, "Bánh & xôi", ""],
-    ["Xôi mặn", "1 gói", 520, "Bánh & xôi", "Có thể chia đôi: ăn một nửa buổi sáng, nửa còn lại cho bữa xế."],
-    ["Bánh cuốn", "1 đĩa", 330, "Bánh & xôi", ""],
-    ["Bánh bao nhân thịt trứng", "1 cái", 320, "Bánh & xôi", ""],
-    ["Bánh xèo", "1 cái lớn", 320, "Bánh & xôi", "Chưa tính nước chấm; ăn kèm thật nhiều rau."],
-    ["Cá kho tộ", "1 khúc (100 g)", 190, "Món nhà", ""],
-    ["Thịt kho trứng", "100 g thịt, 1 trứng", 380, "Món nhà", "Chọn thịt nạc, hớt bớt mỡ trong nồi kho."],
-    ["Canh chua cá", "1 tô nhỏ", 130, "Món nhà", ""],
-    ["Rau muống xào tỏi", "1 đĩa", 160, "Món nhà", "Rau xào ngấm dầu; rau luộc chỉ khoảng 30 kcal."],
-    ["Trứng gà luộc", "1 quả", 75, "Món nhà", ""],
-    ["Ức gà luộc", "100 g", 165, "Món nhà", ""],
-    ["Gỏi cuốn", "1 cuốn", 75, "Ăn vặt", "Chấm nước mắm thay tương đậu phộng để bớt calo."],
-    ["Chả giò chiên", "1 cuốn", 100, "Ăn vặt", ""],
-    ["Bánh tráng trộn", "1 bịch", 350, "Ăn vặt", ""],
-    ["Chè ba màu", "1 ly", 320, "Ăn vặt", ""],
-    ["Bánh flan", "1 cái", 130, "Ăn vặt", ""],
-    ["Trà sữa trân châu", "1 ly 500 ml, 100% đường", 420, "Đồ uống", "Gọi 30% đường và bỏ trân châu."],
-    ["Cà phê sữa đá", "1 ly", 140, "Đồ uống", ""],
-    ["Bạc xỉu", "1 ly", 190, "Đồ uống", ""],
-    ["Sinh tố bơ", "1 ly", 360, "Đồ uống", "Phần lớn calo đến từ sữa đặc; xin ít sữa."],
-    ["Nước mía", "1 ly 500 ml", 230, "Đồ uống", ""],
-    ["Chuối", "1 trái", 100, "Trái cây & sữa", ""],
-    ["Xoài chín", "1 trái nhỏ (200 g phần ăn được)", 130, "Trái cây & sữa", ""],
-    ["Sữa chua có đường", "1 hộp 100 g", 100, "Trái cây & sữa", ""],
-    ["Sữa chua không đường", "1 hộp 100 g", 65, "Trái cây & sữa", ""]
+    ["Phở bò tái", "1 tô", 415, "Món nước", "Xin ít bánh phở, thêm giá và rau; hớt bỏ váng mỡ."],
+    ["Phở bò chín", "1 tô", 430, "Món nước", ""],
+    ["Phở gà", "1 tô", 485, "Món nước", "Nhiều calo hơn phở bò tái vì da gà và nước dùng béo; xin thịt ức, bỏ da."],
+    ["Bún bò Huế", "1 tô", 480, "Món nước", "Thêm giò heo lên khoảng 620 kcal; chọn tô không giò."],
+    ["Bún riêu cua", "1 tô", 415, "Món nước", ""],
+    ["Bún thịt nướng", "1 tô", 450, "Món nước", "Thêm chả giò lên khoảng 600 kcal."],
+    ["Hủ tiếu Nam Vang", "1 tô", 400, "Món nước", ""],
+    ["Mì Quảng", "1 tô", 540, "Món nước", ""],
+    ["Bánh canh cua", "1 tô", 380, "Món nước", ""],
+    ["Cơm tấm sườn", "1 phần", 530, "Cơm", "Bỏ mỡ hành, xin thêm dưa leo, cà chua."],
+    ["Cơm tấm bì", "1 phần", 630, "Cơm", ""],
+    ["Cơm tấm chả", "1 phần", 595, "Cơm", ""],
+    ["Cơm gà xối mỡ", "1 dĩa", 550, "Cơm", "Các nguồn ước tính 500 đến 600 kcal tùy quán. Cơm gà luộc bỏ da sẽ nhẹ hơn."],
+    ["Cơm chiên dương châu", "1 dĩa", 530, "Cơm", ""],
+    ["Cơm trắng", "1 chén", 200, "Cơm", ""],
+    ["Bánh mì thịt", "1 ổ", 460, "Bánh & xôi", "Xin ít pate và bơ, thêm dưa leo."],
+    ["Bánh mì không", "1 ổ trung", 240, "Bánh & xôi", ""],
+    ["Xôi mặn", "1 gói", 500, "Bánh & xôi", "Có thể chia đôi: ăn một nửa buổi sáng, nửa còn lại cho bữa xế."],
+    ["Bánh cuốn", "1 đĩa", 590, "Bánh & xôi", "Đĩa đầy đủ kèm chả lụa và hành phi; xin ít hành phi và bớt chả."],
+    ["Bánh bao nhân thịt", "1 cái", 330, "Bánh & xôi", ""],
+    ["Bánh xèo", "1 cái", 515, "Bánh & xôi", "Chưa tính nước chấm. Ăn kèm thật nhiều rau và chia sẻ cái thứ hai."],
+    ["Bánh chưng", "1 cái", 410, "Bánh & xôi", ""],
+    ["Cá lóc kho", "1 lát cá", 130, "Món nhà", ""],
+    ["Cá ngừ kho", "1 lát cá", 120, "Món nhà", ""],
+    ["Thịt kho trứng", "1 trứng, 2 miếng thịt", 315, "Món nhà", "Chọn thịt nạc, hớt bớt mỡ trong nồi kho."],
+    ["Đậu hũ sốt cà", "1 đĩa", 240, "Món nhà", ""],
+    ["Bông cải xào thập cẩm", "1 đĩa", 140, "Món nhà", "Rau xào ngấm dầu; rau luộc ít calo hơn nhiều."],
+    ["Canh chua", "1 chén", 30, "Món nhà", ""],
+    ["Canh rau ngót", "1 chén", 30, "Món nhà", ""],
+    ["Trứng gà", "1 quả", 80, "Món nhà", "Trứng gà ta nhỏ hơn, khoảng 60 kcal."],
+    ["Ức gà luộc, bỏ da", "100 g", 165, "Món nhà", ""],
+    ["Gỏi cuốn tôm", "3 cuốn", 145, "Ăn vặt", "Chấm nước mắm thay tương đậu phộng để bớt calo."],
+    ["Bánh tráng trộn", "100 g", 300, "Ăn vặt", ""],
+    ["Bắp luộc", "1 trái", 190, "Ăn vặt", ""],
+    ["Chè đậu đen", "1 ly", 420, "Ăn vặt", ""],
+    ["Chè trôi nước", "1 chén", 515, "Ăn vặt", ""],
+    ["Bánh flan", "1 cái", 65, "Ăn vặt", ""],
+    ["Trà sữa trân châu", "1 ly size M", 500, "Đồ uống", "Riêng 40 g trân châu đã khoảng 140 kcal. Gọi ít đường và bỏ trân châu."],
+    ["Cà phê sữa đá", "1 ly, 2 muỗng sữa đặc", 130, "Đồ uống", "Ước tính theo lượng sữa đặc: mỗi muỗng canh khoảng 60 kcal."],
+    ["Cà phê đen", "1 tách", 40, "Đồ uống", ""],
+    ["Trà đào", "240 ml", 120, "Đồ uống", ""],
+    ["Nước ngọt có ga", "1 lon", 145, "Đồ uống", ""],
+    ["Nước mía", "1 ly", 105, "Đồ uống", ""],
+    ["Nước cam vắt", "1 ly", 225, "Đồ uống", ""],
+    ["Chuối già", "1 trái", 75, "Trái cây & sữa", ""],
+    ["Xoài", "1 trái", 180, "Trái cây & sữa", ""],
+    ["Bơ", "1 trái", 185, "Trái cây & sữa", "Nhiều chất béo tốt nhưng nhiều calo; nửa trái là đủ một lần ăn."],
+    ["Ổi", "1 trái", 55, "Trái cây & sữa", ""],
+    ["Cam", "1 trái", 70, "Trái cây & sữa", ""],
+    ["Sữa chua không đường", "1 hũ 100 g", 65, "Trái cây & sữa", ""]
   ];
   var foodGroup = "Tất cả";
   var foodList = $("food-list"), foodQ = $("food-q"), foodChips = $("food-chips"), foodRef = $("food-ref");
@@ -917,7 +1041,7 @@ footer { padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
     var total = $("kcal-total");
     total.dataset.v = 0;
     total.textContent = "0";
-    setTimeout(function () { tween(total, 1350, function (v) { return fmt.format(Math.round(v)); }, 900); }, 1250);
+    setTimeout(function () { tween(total, 1330, function (v) { return fmt.format(Math.round(v)); }, 900); }, 1250);
   }
 })();
 </script>
