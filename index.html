@@ -101,12 +101,14 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 .brand-mark { height: 40px; width: auto; flex: none; display: block; }
 .brand-text { display: block; }
 .brand small { display: block; font-family: var(--font-body); font-weight: 500; font-size: .75rem; color: var(--muted); letter-spacing: .04em; }
-.nav .wrap { flex-wrap: wrap; row-gap: .5rem; }
+.nav .wrap { flex-wrap: wrap; row-gap: .5rem; max-width: 1240px; }
+.cta-short { display: none; }
+@media (max-width: 520px) { .cta-full { display: none; } .cta-short { display: inline; } .brand-mark { height: 34px; } }
 .tabs { display: flex; gap: .2rem; align-items: center; min-width: 0; }
 .tabs a { color: var(--muted); text-decoration: none; font-weight: 500; font-size: .93rem; padding: .42rem .75rem; border-radius: 99px; white-space: nowrap; transition: color .2s ease, background-color .2s ease; }
 .tabs a:hover { color: var(--ink); background: var(--primary-soft); }
 .tabs a[aria-current="page"] { color: var(--primary); background: var(--primary-soft); font-weight: 600; }
-@media (max-width: 1100px) {
+@media (max-width: 1240px) {
   .tabs { order: 3; flex: 1 0 100%; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
   .tabs::-webkit-scrollbar { display: none; }
 }
@@ -416,7 +418,7 @@ footer { padding-bottom: calc(5rem + env(safe-area-inset-bottom, 0px)); }
       <a href="#goi" data-tab-link="goi">Gói tư vấn</a>
       <a href="#hoi-dap" data-tab-link="hoi-dap">Hỏi đáp</a>
     </nav>
-    <a class="btn btn-primary nav-cta" href="https://forms.gle/5B94N66QF3utjfyo9" target="_blank" rel="noopener">Đăng ký tư vấn</a>
+    <a class="btn btn-primary nav-cta" href="https://forms.gle/5B94N66QF3utjfyo9" target="_blank" rel="noopener"><span class="cta-full">Đăng ký tư vấn</span><span class="cta-short">Đăng ký</span></a>
   </div>
 </header>
 
