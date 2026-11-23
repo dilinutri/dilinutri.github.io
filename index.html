@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>html{color-scheme:light}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 <title>Ăn Đúng Để Nhẹ Cân</title>
-<meta name="description" content="Tư vấn dinh dưỡng giảm cân cá nhân hóa bằng món Việt quen thuộc, theo dõi hằng ngày qua Zalo.">
+<meta name="description" content="Nguyễn Diệu Linh, Cử nhân Dinh dưỡng (Đại học Y Dược TP.HCM). Tư vấn giảm cân cá nhân hóa bằng món Việt quen thuộc, theo dõi hằng ngày qua Zalo.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Lexend:wght@500;600;700&display=swap">
@@ -131,6 +131,14 @@ section { padding-block: clamp(3rem, 7vw, 5rem); }
 .cred b { display: block; font-family: var(--font-display); font-size: 1.05rem; }
 .cred span { font-size: .9rem; color: var(--muted); }
 .about-text { display: grid; gap: 1rem; max-width: 65ch; margin-top: 1rem; }
+.timeline { list-style: none; padding: 0; margin: 1rem 0 0; display: grid; gap: 0; border-left: 2px solid var(--line); }
+.timeline li { display: grid; grid-template-columns: 9.5rem 1fr; gap: .3rem 1.2rem; padding: 0 0 1.1rem 1.2rem; position: relative; min-width: 0; }
+.timeline li::before { content: ""; position: absolute; left: -7px; top: .45rem; width: 12px; height: 12px; border-radius: 50%; background: var(--surface); border: 2px solid var(--primary); }
+.timeline li:first-child::before { background: var(--primary); }
+.t-when { font-size: .85rem; font-weight: 600; color: var(--primary); font-variant-numeric: tabular-nums; padding-top: .1rem; }
+.timeline b { display: block; }
+.timeline p { color: var(--muted); font-size: .92rem; margin-top: .15rem; }
+@media (max-width: 560px) { .timeline li { grid-template-columns: 1fr; } }
 @media (max-width: 760px) { .about .wrap { grid-template-columns: 1fr; } .portrait { max-width: 260px; } }
 
 /* process */
@@ -210,7 +218,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
 <header class="nav">
   <div class="wrap">
-    <a class="brand" href="#top"><span class="ph">[Tên của bạn]</span><small>CHUYÊN GIA DINH DƯỠNG</small></a>
+    <a class="brand" href="#top">Nguyễn Diệu Linh<small>CỬ NHÂN DINH DƯỠNG</small></a>
     <nav class="nav-links" aria-label="Mục lục">
       <a href="#ve-toi">Về tôi</a>
       <a href="#cach-lam">Cách làm</a>
@@ -226,7 +234,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   <section class="hero">
     <div class="wrap">
       <div>
-        <p class="eyebrow">Tư vấn giảm cân cá nhân hóa</p>
+        <p class="eyebrow">Nguyễn Diệu Linh · Cử nhân Dinh dưỡng</p>
         <h1>Giảm cân bằng <em>bữa cơm Việt</em> quen thuộc, không nhịn đói</h1>
         <p class="lead">Tôi tính lượng calo phù hợp với cơ thể bạn, lên thực đơn từ những món bạn vẫn ăn hằng ngày, rồi theo sát bạn qua Zalo mỗi ngày cho đến khi đạt mục tiêu.</p>
         <ul class="hero-points">
@@ -270,16 +278,26 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <div class="portrait">[Ảnh chân dung của bạn]</div>
       <div>
         <p class="eyebrow">Về tôi</p>
-        <h2>Xin chào, tôi là <span class="ph">[Tên của bạn]</span></h2>
+        <h2>Xin chào, tôi là Nguyễn Diệu Linh</h2>
         <div class="about-text">
-          <p>Tôi là chuyên gia dinh dưỡng, hiện đồng hành cùng <span class="ph">[số]</span> khách hàng trong hành trình giảm cân. Tôi tin rằng giảm cân bền vững không đến từ việc nhịn ăn hay kiêng khem khắc nghiệt, mà từ việc ăn đúng lượng, đúng món, và có người nhắc nhở mỗi ngày.</p>
-          <p><span class="ph">[Một hai câu về câu chuyện của bạn: vì sao bạn làm nghề này, bạn mạnh về nhóm khách nào, ví dụ dân văn phòng, mẹ sau sinh, người có bệnh nền.]</span></p>
+          <p>Tôi là Cử nhân Dinh dưỡng, tốt nghiệp Đại học Y Dược TP. Hồ Chí Minh, hiện đang đồng hành cùng khoảng 20 khách hàng trong hành trình giảm cân. Tôi tin rằng giảm cân bền vững đến từ việc ăn đúng lượng, đúng món và có người nhắc nhở mỗi ngày, chứ không phải từ nhịn ăn hay kiêng khem khắc nghiệt.</p>
+          <p>Tôi bắt đầu từ dinh dưỡng lâm sàng trong bệnh viện, nơi mỗi thực đơn phải phù hợp với bệnh lý và nhu cầu của từng người. Từ năm 2024, tôi là Chuyên viên Dinh dưỡng tại Wao, ứng dụng theo dõi dinh dưỡng, tư vấn cho người dùng về kiểm soát cân nặng, tăng cơ và ăn uống cân bằng.</p>
+          <p>Ở Wao, tôi trực tiếp tham gia xây dựng và kiểm định dữ liệu dinh dưỡng của hơn 5.000 món ăn Việt Nam. Nhờ vậy, thực đơn tôi lên cho bạn được tính calo theo đúng những món Việt bạn vẫn ăn hằng ngày, từ tô phở, dĩa cơm tấm đến ly trà sữa.</p>
         </div>
         <div class="creds">
-          <div class="cred"><b class="ph">[Bằng cấp]</b><span>Ví dụ: Cử nhân Dinh dưỡng, trường ...</span></div>
-          <div class="cred"><b class="ph">[Số năm kinh nghiệm]</b><span>Tư vấn dinh dưỡng và giảm cân</span></div>
-          <div class="cred"><b class="ph">[Chứng chỉ hoặc nơi từng làm]</b><span>Bệnh viện, phòng khám, trung tâm ...</span></div>
+          <div class="cred"><b>Cử nhân Dinh dưỡng</b><span>Đại học Y Dược TP. Hồ Chí Minh, 2019–2023</span></div>
+          <div class="cred"><b>Hơn 5.000 món ăn Việt</b><span>Dữ liệu dinh dưỡng tôi tham gia xây dựng và kiểm định tại ứng dụng Wao</span></div>
+          <div class="cred"><b>6 bệnh viện tại TP.HCM</b><span>Thực tập dinh dưỡng lâm sàng và suất ăn bệnh lý</span></div>
+          <div class="cred"><b>Bằng khen Bộ Y tế</b><span>Thành tích xuất sắc trong phòng, chống dịch COVID-19 (2021)</span></div>
         </div>
+        <h3 style="margin-top:2.2rem">Hành trình nghề nghiệp</h3>
+        <ol class="timeline">
+          <li><span class="t-when">2026 – nay</span><div><b>Cộng tác nghiên cứu dịch tễ học dinh dưỡng</b><p>Các chủ đề gồm thực phẩm siêu chế biến (phân loại NOVA), thói quen ăn trước khi ngủ, và tiêu chí GLIM đánh giá suy dinh dưỡng ở người cao tuổi.</p></div></li>
+          <li><span class="t-when">2024 – nay</span><div><b>Chuyên viên Dinh dưỡng, ứng dụng Wao (Công ty beWao)</b><p>Tư vấn dinh dưỡng cá nhân hóa, xây dựng thực đơn theo văn hóa ẩm thực Việt, biên soạn nội dung giáo dục dinh dưỡng theo khuyến nghị của WHO và FAO.</p></div></li>
+          <li><span class="t-when">12/2022 – 03/2023</span><div><b>Thực tập Dinh dưỡng lâm sàng</b><p>Bệnh viện Ung Bướu, Bệnh viện Đại học Y Dược, Bệnh viện Nhi Đồng 2. Sàng lọc, đánh giá tình trạng dinh dưỡng và hỗ trợ lập kế hoạch chăm sóc dinh dưỡng cho người bệnh.</p></div></li>
+          <li><span class="t-when">04/2022 – 07/2022</span><div><b>Thực tập Quản lý dịch vụ ăn uống</b><p>Bệnh viện Thống Nhất, Bệnh viện Đại học Y Dược, Bệnh viện Nhi Đồng 1, Bệnh viện Nhi Đồng Thành phố. Xây dựng thực đơn bệnh lý và giám sát an toàn thực phẩm.</p></div></li>
+          <li><span class="t-when">2019 – 2023</span><div><b>Cử nhân Dinh dưỡng, Đại học Y Dược TP. Hồ Chí Minh</b><p>Khóa luận về dinh dưỡng cho bệnh nhân xơ gan. Học bổng khuyến khích học tập năm học 2020–2021.</p></div></li>
+        </ol>
       </div>
     </div>
   </section>
@@ -446,7 +464,11 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <div class="contact-card">
         <div class="contact-row">
           <span class="k">Zalo</span>
-          <div class="copy-line"><b id="zalo-number" class="ph">[Số Zalo]</b><button class="copy-btn" type="button" data-copy="zalo-number">Sao chép</button></div>
+          <div class="copy-line"><b id="zalo-number">0359 600 743</b><button class="copy-btn" type="button" data-copy="zalo-number">Sao chép</button></div>
+        </div>
+        <div class="contact-row">
+          <span class="k">Email</span>
+          <div class="copy-line"><span id="email-addr" style="user-select:all; overflow-wrap:anywhere">dili267.queens@gmail.com</span><button class="copy-btn" type="button" data-copy="email-addr">Sao chép</button></div>
         </div>
         <div class="contact-row">
           <span class="k">Facebook</span>
@@ -463,7 +485,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
 
 <footer>
   <div class="wrap">
-    <span>© 2026 <span class="ph">[Tên của bạn]</span>. Tư vấn dinh dưỡng giảm cân.</span>
+    <span>© 2026 Nguyễn Diệu Linh. Tư vấn dinh dưỡng giảm cân.</span>
     <span>Thông tin trên trang mang tính tham khảo, không thay thế chẩn đoán y khoa.</span>
   </div>
 </footer>
