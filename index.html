@@ -176,7 +176,8 @@ input:focus, select:focus { outline: 2px solid var(--primary); outline-offset: 0
 .plan { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 1.5rem; display: grid; gap: .9rem; align-content: start; min-width: 0; }
 .plan.featured { border: 2px solid var(--primary); }
 .plan .tag { justify-self: start; font-size: .75rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; background: var(--primary); color: var(--primary-ink); padding: .2rem .6rem; border-radius: 99px; }
-.plan .price { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; }
+.plan .price { font-family: var(--font-display); font-size: 1.6rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.plan .price-sub { font-size: .85rem; color: var(--muted); margin-top: .15rem; }
 .plan ul { margin: 0; padding-left: 1.1rem; display: grid; gap: .35rem; color: var(--muted); font-size: .95rem; }
 @media (max-width: 860px) { .plans { grid-template-columns: 1fr; } }
 
@@ -378,7 +379,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       <div class="plans">
         <article class="plan">
           <h3>Gói 1 tháng</h3>
-          <div class="price ph">[Giá]</div>
+          <div><div class="price">2.000.000đ</div><p class="price-sub">Phù hợp để bắt đầu và làm quen</p></div>
           <ul>
             <li>Tính calo và thực đơn cá nhân</li>
             <li>Nhắn tin hỏi đáp qua Zalo mỗi ngày</li>
@@ -389,7 +390,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <article class="plan featured">
           <span class="tag">Phổ biến</span>
           <h3>Gói 3 tháng</h3>
-          <div class="price ph">[Giá]</div>
+          <div><div class="price">5.500.000đ</div><p class="price-sub">Khoảng 1.833.000đ mỗi tháng, tiết kiệm 500.000đ</p></div>
           <ul>
             <li>Mọi quyền lợi của gói 1 tháng</li>
             <li>Điều chỉnh thực đơn khi chững cân</li>
