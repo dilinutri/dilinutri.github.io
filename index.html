@@ -212,6 +212,85 @@ details p { margin-top: .7rem; color: var(--muted); }
 
 footer { padding-block: 1.6rem; font-size: .85rem; color: var(--muted); }
 footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .5rem 1.5rem; }
+
+/* ---------- motion ---------- */
+.nav { transition: box-shadow .3s ease; }
+.nav.scrolled { box-shadow: 0 8px 24px -18px rgba(10, 40, 25, .45); }
+.btn { transition: transform .2s ease, box-shadow .2s ease, filter .2s ease, border-color .2s ease; }
+.btn:hover { transform: translateY(-2px); box-shadow: 0 10px 22px -14px rgba(20, 60, 40, .55); }
+.btn:active { transform: translateY(0); }
+.plan { transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease; }
+.plan:hover { transform: translateY(-4px); box-shadow: 0 22px 40px -28px rgba(20, 60, 40, .5); }
+.cred { transition: border-color .25s ease; }
+.cred:hover { border-color: var(--accent); }
+
+/* hero ambient light */
+.hero { position: relative; isolation: isolate; overflow: clip; }
+.hero::before, .hero::after { content: ""; position: absolute; z-index: -1; border-radius: 50%; pointer-events: none; }
+.hero::before { width: 560px; height: 560px; right: -160px; top: -180px; background: radial-gradient(circle, color-mix(in srgb, var(--primary) 20%, transparent), transparent 65%); }
+.hero::after { width: 420px; height: 420px; left: -180px; bottom: -200px; background: radial-gradient(circle, color-mix(in srgb, var(--accent) 16%, transparent), transparent 65%); }
+
+/* timeline line that fills as you scroll */
+.timeline { position: relative; }
+.timeline::before { content: ""; position: absolute; left: -2px; top: 0; width: 2px; height: 100%; background: var(--primary); transform-origin: top; }
+.timeline li::before { z-index: 1; }
+
+/* BMI scale */
+.bmi-scale { grid-column: 1 / -1; position: relative; margin-top: .5rem; padding-bottom: 1.3rem; }
+.bmi-track { display: flex; height: 8px; border-radius: 99px; overflow: hidden; }
+.bmi-track i { display: block; height: 100%; }
+.bmi-track .s1 { width: 17.5%; background: color-mix(in srgb, var(--warn) 55%, transparent); }
+.bmi-track .s2 { width: 22.5%; background: color-mix(in srgb, var(--good) 70%, transparent); }
+.bmi-track .s3 { width: 10%; background: color-mix(in srgb, var(--accent) 70%, transparent); }
+.bmi-track .s4 { width: 50%; background: color-mix(in srgb, var(--bad) 55%, transparent); }
+.bmi-marker { position: absolute; top: 4px; left: 50%; width: 18px; height: 18px; border-radius: 50%; background: var(--surface); border: 3px solid var(--ink); transform: translate(-50%, -50%); transition: left .7s cubic-bezier(.2, .8, .2, 1); box-shadow: 0 2px 6px rgba(0, 0, 0, .25); }
+.bmi-ticks span { position: absolute; top: 14px; transform: translateX(-50%); font-size: .72rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes rise { from { opacity: 0; transform: translateY(14px); } }
+  @keyframes slide-in { from { opacity: 0; transform: translateX(28px) rotate(1.5deg); } }
+  @keyframes print { from { opacity: 0; transform: translateY(-6px); clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+  @keyframes grow { from { transform: scaleX(0); } }
+  @keyframes drift { to { transform: translate(-50px, 40px) scale(1.12); } }
+  @keyframes reveal { from { opacity: 0; transform: translateY(30px); } }
+  @keyframes draw { from { transform: scaleY(0); } }
+  @keyframes pop { from { opacity: 0; transform: scale(.4); } }
+
+  /* page-load sequence: pitch first, then the menu ticket "prints" line by line */
+  .hero .eyebrow { animation: rise .6s ease both; }
+  .hero h1 { animation: rise .7s .08s ease both; }
+  .hero .lead { animation: rise .7s .18s ease both; }
+  .hero-points li { animation: rise .6s ease both; }
+  .hero-points li:nth-child(1) { animation-delay: .28s; }
+  .hero-points li:nth-child(2) { animation-delay: .36s; }
+  .hero-points li:nth-child(3) { animation-delay: .44s; }
+  .hero-cta { animation: rise .6s .54s ease both; }
+  .ticket { animation: slide-in .8s .2s cubic-bezier(.2, .8, .2, 1) both; }
+  .ticket .meal { animation: print .45s ease both; }
+  .ticket .meal:nth-child(2) { animation-delay: .65s; }
+  .ticket .meal:nth-child(3) { animation-delay: .8s; }
+  .ticket .meal:nth-child(4) { animation-delay: .95s; }
+  .ticket .meal:nth-child(5) { animation-delay: 1.1s; }
+  .ticket-total { animation: rise .5s 1.25s ease both; }
+  .macro-bar { transform-origin: left; animation: grow .9s 1.4s cubic-bezier(.2, .8, .2, 1) both; }
+  .macro-legend, .ticket-note { animation: rise .5s 1.5s ease both; }
+  .hero::before { animation: drift 16s ease-in-out infinite alternate; }
+  .hero::after { animation: drift 20s ease-in-out -6s infinite alternate-reverse; }
+
+  details[open] p { animation: rise .35s ease both; }
+
+  /* scroll reveals: content is visible by default, browsers with scroll timelines ease it in */
+  @supports (animation-timeline: view()) {
+    section:not(.hero) .eyebrow, section:not(.hero) h2, .about-text p, .portrait, .cred,
+    .steps li, .calc > *, .plan, details, .contact-card, .timeline li, .lead:not(.hero .lead) {
+      animation: reveal linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 45%;
+    }
+    .steps li::before { animation: pop linear both; animation-timeline: view(); animation-range: entry 10% entry 60%; }
+    .timeline::before { animation: draw linear both; animation-timeline: view(); animation-range: entry 30% exit 60%; }
+  }
+}
 </style>
 </head>
 <body>
@@ -256,7 +335,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
         <div class="meal"><span class="when">Trưa</span><span class="what">1 chén cơm gạo lứt, cá kho tộ, canh rau ngót</span><span class="kcal">450</span></div>
         <div class="meal"><span class="when">Xế</span><span class="what">Sữa chua không đường, nửa trái ổi</span><span class="kcal">150</span></div>
         <div class="meal"><span class="when">Tối</span><span class="what">Ức gà áp chảo, rau luộc, nửa chén cơm</span><span class="kcal">400</span></div>
-        <div class="ticket-total"><span>Tổng cả ngày</span><b>≈ 1.350 kcal</b></div>
+        <div class="ticket-total"><span>Tổng cả ngày</span><b>≈ <span id="kcal-total">1.350</span> kcal</b></div>
         <div class="macro-bar" aria-hidden="true">
           <i style="width:30%; background: var(--primary)"></i>
           <i style="width:45%; background: var(--accent)"></i>
@@ -354,6 +433,11 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
             <span class="k">Chỉ số BMI</span>
             <span class="v" id="out-bmi">–</span>
             <span class="sub"><span class="pill" id="out-bmi-label">–</span> theo ngưỡng BMI cho người châu Á</span>
+            <div class="bmi-scale" aria-hidden="true">
+              <div class="bmi-track"><i class="s1"></i><i class="s2"></i><i class="s3"></i><i class="s4"></i></div>
+              <span class="bmi-marker" id="bmi-marker"></span>
+              <div class="bmi-ticks"><span style="left:17.5%">18,5</span><span style="left:40%">23</span><span style="left:50%">25</span></div>
+            </div>
           </div>
           <div class="stat">
             <span class="k">Năng lượng tiêu hao mỗi ngày</span>
@@ -474,6 +558,25 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   var $ = function (id) { return document.getElementById(id); };
   var fmt = new Intl.NumberFormat("vi-VN", { maximumFractionDigits: 0 });
   var fmt1 = new Intl.NumberFormat("vi-VN", { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  // animate a number from its last shown value to the new one
+  function tween(el, to, format, dur) {
+    var from = el.dataset.v === undefined ? to : parseFloat(el.dataset.v);
+    el.dataset.v = to;
+    if (reduce || from === to) { el.textContent = format(to); return; }
+    var t0 = performance.now();
+    dur = dur || 500;
+    cancelAnimationFrame(el._raf);
+    function step(now) {
+      var p = Math.min(1, (now - t0) / dur);
+      var e = 1 - Math.pow(1 - p, 3);
+      el.textContent = format(from + (to - from) * e);
+      if (p < 1) el._raf = requestAnimationFrame(step);
+    }
+    el._raf = requestAnimationFrame(step);
+  }
+  var kcal = function (v) { return fmt.format(Math.round(v / 10) * 10); };
 
   function bmiLabel(b) {
     if (b < 18.5) return ["Thiếu cân", "warn"];
@@ -502,12 +605,14 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     var floor = sex === "m" ? 1500 : 1200;
     var goal = Math.max(tdee - 500, floor);
     var lbl = bmiLabel(bmi);
-    $("out-bmi").textContent = fmt1.format(bmi);
+    tween($("out-bmi"), bmi, function (v) { return fmt1.format(v); });
     var pill = $("out-bmi-label");
     pill.textContent = lbl[0];
     pill.className = "pill" + (lbl[1] ? " " + lbl[1] : "");
-    $("out-tdee").textContent = fmt.format(Math.round(tdee / 10) * 10);
-    $("out-goal").textContent = fmt.format(Math.round(goal / 10) * 10);
+    tween($("out-tdee"), tdee, kcal);
+    tween($("out-goal"), goal, kcal);
+    var pos = Math.max(0, Math.min(100, (bmi - 15) / 20 * 100));
+    $("bmi-marker").style.left = pos + "%";
   }
 
   ["sex", "age", "height", "weight", "activity"].forEach(function (id) {
@@ -534,6 +639,20 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
       } else { selectFallback(); }
     });
   });
+
+  // nav shadow once the page scrolls
+  var nav = document.querySelector(".nav");
+  function onScroll() { nav.classList.toggle("scrolled", window.scrollY > 8); }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  // the sample menu total counts up as the ticket finishes printing
+  if (!reduce) {
+    var total = $("kcal-total");
+    total.dataset.v = 0;
+    total.textContent = "0";
+    setTimeout(function () { tween(total, 1350, function (v) { return fmt.format(Math.round(v)); }, 900); }, 1250);
+  }
 })();
 </script>
 
