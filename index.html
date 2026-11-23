@@ -89,7 +89,6 @@ body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-a
 }
 
 /* home: links to the other tabs */
-.explore { padding-top: 0; }
 .explore-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
 .explore-card { display: grid; gap: .35rem; align-content: start; padding: 1.2rem 1.2rem 1rem; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); color: var(--ink); text-decoration: none; min-width: 0; transition: transform .25s ease, border-color .25s ease, box-shadow .25s ease; }
 .explore-card b { font-family: var(--font-display); font-size: 1.05rem; display: flex; justify-content: space-between; gap: .5rem; }
@@ -317,7 +316,6 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     <a class="brand" href="#trang-chu">Nguyễn Diệu Linh<small>CỬ NHÂN DINH DƯỠNG</small></a>
     <nav class="tabs" aria-label="Các trang">
       <a href="#trang-chu" data-tab-link="trang-chu">Trang chủ</a>
-      <a href="#ve-toi" data-tab-link="ve-toi">Về tôi</a>
       <a href="#cach-lam" data-tab-link="cach-lam">Cách làm</a>
       <a href="#tinh-calo" data-tab-link="tinh-calo">Tính calo</a>
       <a href="#goi" data-tab-link="goi">Gói tư vấn</a>
@@ -370,19 +368,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     </div>
   </section>
 
-  <section class="explore" data-tab="trang-chu">
-    <div class="wrap">
-      <p class="eyebrow">Tìm hiểu thêm</p>
-      <div class="explore-grid">
-        <a class="explore-card" href="#ve-toi"><b>Về tôi</b><span>Cử nhân Dinh dưỡng Đại học Y Dược TP.HCM, từng thực tập tại 6 bệnh viện.</span></a>
-        <a class="explore-card" href="#cach-lam"><b>Cách làm</b><span>Bốn bước từ tin nhắn đầu tiên đến cân nặng mục tiêu.</span></a>
-        <a class="explore-card" href="#tinh-calo"><b>Tính calo</b><span>Xem chỉ số BMI và lượng calo nên ăn mỗi ngày của bạn.</span></a>
-        <a class="explore-card" href="#goi"><b>Gói tư vấn</b><span>Gói 1, 3 hoặc 6 tháng, từ 2.000.000đ.</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="about" id="ve-toi" data-tab="ve-toi">
+  <section class="about" id="ve-toi" data-tab="trang-chu">
     <div class="wrap">
       <img class="portrait" src="photo.jpg" width="800" height="1000" alt="Chân dung Nguyễn Diệu Linh, Cử nhân Dinh dưỡng, mặc áo blouse trắng">
       <div>
@@ -407,6 +393,18 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
           <li><span class="t-when">04/2022 – 07/2022</span><div><b>Thực tập Quản lý dịch vụ ăn uống</b><p>Bệnh viện Thống Nhất, Bệnh viện Đại học Y Dược, Bệnh viện Nhi Đồng 1, Bệnh viện Nhi Đồng Thành phố. Xây dựng thực đơn bệnh lý và giám sát an toàn thực phẩm.</p></div></li>
           <li><span class="t-when">2019 – 2023</span><div><b>Cử nhân Dinh dưỡng, Đại học Y Dược TP. Hồ Chí Minh</b><p>Khóa luận về dinh dưỡng cho bệnh nhân xơ gan. Học bổng khuyến khích học tập năm học 2020–2021.</p></div></li>
         </ol>
+      </div>
+    </div>
+  </section>
+
+  <section class="explore" data-tab="trang-chu">
+    <div class="wrap">
+      <p class="eyebrow">Tìm hiểu thêm</p>
+      <div class="explore-grid">
+        <a class="explore-card" href="#cach-lam"><b>Cách làm</b><span>Bốn bước từ tin nhắn đầu tiên đến cân nặng mục tiêu.</span></a>
+        <a class="explore-card" href="#tinh-calo"><b>Tính calo</b><span>Xem chỉ số BMI và lượng calo nên ăn mỗi ngày của bạn.</span></a>
+        <a class="explore-card" href="#goi"><b>Gói tư vấn</b><span>Gói 1, 3 hoặc 6 tháng, từ 2.000.000đ.</span></a>
+        <a class="explore-card" href="#hoi-dap"><b>Hỏi đáp</b><span>Có phải nhịn ăn không, ăn ngoài thì sao, bao lâu thấy kết quả.</span></a>
       </div>
     </div>
   </section>
@@ -678,7 +676,7 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
   onScroll();
 
   // tabs: each menu item shows its own view; the contact block stays under every view
-  var TABS = { "trang-chu": "", "ve-toi": "Về tôi", "cach-lam": "Cách làm", "tinh-calo": "Tính calo", "goi": "Gói tư vấn", "hoi-dap": "Hỏi đáp" };
+  var TABS = { "trang-chu": "", "cach-lam": "Cách làm", "tinh-calo": "Tính calo", "goi": "Gói tư vấn", "hoi-dap": "Hỏi đáp" };
   var baseTitle = document.title;
   var views = document.querySelectorAll("[data-tab]");
   var links = document.querySelectorAll("[data-tab-link]");
@@ -711,7 +709,10 @@ footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; g
     var h = location.hash.slice(1);
     try { h = decodeURIComponent(h); } catch (e) {}
     if (Object.prototype.hasOwnProperty.call(TABS, h)) { show(h, null); return; }
-    show(current || "trang-chu", h ? document.getElementById(h) : null);
+    // an anchor inside a tab (for example #ve-toi on the home tab) opens that tab and scrolls to it
+    var el = h ? document.getElementById(h) : null;
+    var owner = el && el.closest("[data-tab]");
+    show(owner ? owner.getAttribute("data-tab") : (current || "trang-chu"), el);
   }
   links.forEach(function (a) {
     a.addEventListener("click", function () {
